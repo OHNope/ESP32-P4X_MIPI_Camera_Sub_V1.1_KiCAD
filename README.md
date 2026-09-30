@@ -50,7 +50,8 @@ PCB（Allegro 导入）：
 - 封装没有库名、Value 和原理图关联：从板上实物封装生成项目封装库 `Camera_Sub.pretty`，补全库名、Value、符号关联和原理图字段。
 - 网络名与原理图不一致：标签网络加 `/` 前缀；`Net_xx` 单焊盘网络改为原理图的 `unconnected-(…)` 名称。已逐焊盘与原理图网表核对。
 - 两个无位号的 Allegro 机械图形：命名为 MECH1/MECH2 并设为 board-only。
-- 约束为 KiCad 默认值：恢复 Allegro 约束（最小线宽 0.127 mm、最小钻孔 0.25 mm、CSI 差分对 0.1778 mm 网络类）。
+- 约束为 KiCad 默认值：恢复 Allegro 约束（最小线宽 0.127 mm、最小钻孔 0.25 mm）。
+- 网络类按实际铜皮分配：`DP_CSI_A_*`（CSI 差分对，0.1778 mm）、`CS_0`（普通信号，0.127 mm）、`POWER`（3V3/AVDD_2V8/DOVDD_1V8/GND，0.635 mm，过孔 0.762/0.5）；预设线宽、过孔和差分对尺寸表填入板上实际使用的尺寸。
 - GND 铺铜：间距 0.1778 mm、焊盘实心连接，重新填充。
 
 ### 版权与许可
@@ -105,7 +106,8 @@ PCB (Allegro import):
 - Footprints had no library ID, value or symbol link: generated the project footprint library `Camera_Sub.pretty` from the placed footprints and filled in the library IDs, values, symbol links and schematic fields.
 - Net names did not match the schematic: label nets now carry the `/` prefix and single-pad `Net_xx` nets use the schematic's `unconnected-(…)` names. Checked pad by pad against the schematic netlist.
 - Two unreferenced Allegro drawing symbols are named MECH1/MECH2 and set to board-only.
-- Constraints were KiCad defaults: restored the Allegro values (0.127 mm minimum track, 0.25 mm minimum drill, 0.1778 mm netclasses for the CSI differential pairs).
+- Constraints were KiCad defaults: restored the Allegro values (0.127 mm minimum track, 0.25 mm minimum drill).
+- Netclasses assigned from the routed copper: `DP_CSI_A_*` (CSI differential pairs, 0.1778 mm), `CS_0` (ordinary signals, 0.127 mm), `POWER` (3V3/AVDD_2V8/DOVDD_1V8/GND, 0.635 mm, 0.762/0.5 vias). The pre-defined track, via and differential-pair size tables hold the sizes used on the board.
 - GND pour: 0.1778 mm clearance with solid pad connection, refilled.
 
 ### Copyright and license
