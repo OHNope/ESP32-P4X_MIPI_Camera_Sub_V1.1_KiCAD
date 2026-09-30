@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Camera_Sub") (type "KiCad") (uri "${KIPRJMOD}/Camera_Sub.pretty") (options "") (descr "Footprints recovered from the Allegro BRD import"))
+)

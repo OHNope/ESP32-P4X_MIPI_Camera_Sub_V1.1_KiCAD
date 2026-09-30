@@ -1,0 +1,42 @@
+NOTICE - NO LICENSE GRANTED
+
+The hardware design in this repository (schematic, PCB layout, symbols,
+footprints, BOM, placement and manufacturing documents) is the
+ESP32-P4-Function-EV-Board MIPI Camera Adapter Board (Camera Sub V1.1),
+designed by Espressif Systems (Shanghai) Co., Ltd.
+
+Copyright (c) Espressif Systems (Shanghai) Co., Ltd. All rights reserved.
+
+The files here are a KiCad conversion of Espressif's original OrCAD/Allegro
+design data, with fixes to the import (see README.md). The original
+design data is Espressif's Camera Adapter Board reference design package:
+https://dl.espressif.com/schematics/CameraAdapterBoardReferenceDesign.zip
+
+The conversion does not change who owns the design, and this repository
+grants no license to it.
+
+Espressif's documentation states:
+
+    "No licenses express or implied, by estoppel or otherwise, to any
+    intellectual property rights are granted herein."
+
+    Source: Disclaimer and Copyright Notice, esp-dev-kits documentation
+    https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/disclaimer-and-copyright.html
+
+Any use of the design is subject to Espressif's own terms. For design
+documentation or permission beyond what Espressif publishes, contact
+Espressif (sales@espressif.com).
+
+This repository is shared on a non-commercial basis for reference and study,
+to help KiCad users work with this board. It is not affiliated with or
+endorsed by Espressif. If Espressif objects to this repository, it will be
+taken down.
+
+All trade names, trademarks and registered trademarks are the property of
+their respective owners.
+
+THE FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+REPOSITORY MAINTAINER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM THE USE OF THESE FILES.
