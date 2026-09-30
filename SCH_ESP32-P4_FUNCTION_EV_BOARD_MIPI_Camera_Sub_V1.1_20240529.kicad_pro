@@ -759,13 +759,31 @@
     "net_chain_netclasses": {},
     "net_colors": null,
     "netclass_assignments": {
-      "/RESET": [
-        "CS_0"
+      "/CSI_CLKN": [
+        "DP_CSI_A_CLK"
+      ],
+      "/CSI_CLKP": [
+        "DP_CSI_A_CLK"
+      ],
+      "/CSI_DATA0N": [
+        "DP_CSI_A_DATA0"
+      ],
+      "/CSI_DATA0P": [
+        "DP_CSI_A_DATA0"
+      ],
+      "/CSI_DATA1N": [
+        "DP_CSI_A_DATA1"
+      ],
+      "/CSI_DATA1P": [
+        "DP_CSI_A_DATA1"
       ],
       "/ESP_I2C_SCL": [
         "CS_0"
       ],
       "/ESP_I2C_SDA": [
+        "CS_0"
+      ],
+      "/RESET": [
         "CS_0"
       ],
       "/SENSOR_SCL": [
@@ -776,6 +794,18 @@
       ],
       "/XVCLK": [
         "CS_0"
+      ],
+      "3V3": [
+        "POWER"
+      ],
+      "AVDD_2V8": [
+        "POWER"
+      ],
+      "DOVDD_1V8": [
+        "POWER"
+      ],
+      "GND": [
+        "POWER"
       ],
       "Net-(Q3-1G)": [
         "CS_0"
@@ -791,36 +821,6 @@
       ],
       "Net-(Y1-EN)": [
         "CS_0"
-      ],
-      "3V3": [
-        "POWER"
-      ],
-      "AVDD_2V8": [
-        "POWER"
-      ],
-      "DOVDD_1V8": [
-        "POWER"
-      ],
-      "GND": [
-        "POWER"
-      ],
-      "/CSI_CLKP": [
-        "DP_CSI_A_CLK"
-      ],
-      "/CSI_CLKN": [
-        "DP_CSI_A_CLK"
-      ],
-      "/CSI_DATA0P": [
-        "DP_CSI_A_DATA0"
-      ],
-      "/CSI_DATA0N": [
-        "DP_CSI_A_DATA0"
-      ],
-      "/CSI_DATA1P": [
-        "DP_CSI_A_DATA1"
-      ],
-      "/CSI_DATA1N": [
-        "DP_CSI_A_DATA1"
       ]
     },
     "netclass_patterns": [
