@@ -45,6 +45,7 @@ KiCad 的 OrCAD `.DSN` 导入功能目前只在 Nightly (10.99) 里有，正式�
 - `Footprint` 字段为空（封装名在 `OrCAD Footprint` 字段中）：已填写为 `Camera_Sub:<封装名>`。
 - 3V3/GND 由 J1 从主板引入，添加 PWR_FLAG。
 - 4 根 OrCAD 风格的带标签短线一端悬空：截短到标签位置，拓扑不变。
+- 工程把原理图图框设为 `empty.kicad_wks`（只画 OrCAD 自带的图框和标题栏），但没有这个文件：KiCad 会退回默认图框，与 OrCAD 标题栏重叠，KiBot 打印原理图时直接报错。已补上空图框文件。
 
 PCB（Allegro 导入）：
 - 封装没有库名、Value 和原理图关联：从板上实物封装生成项目封装库 `Camera_Sub.pretty`，补全库名、Value、符号关联和原理图字段。
@@ -101,6 +102,7 @@ Schematic (OrCAD import):
 - Empty `Footprint` fields (the package name was in `OrCAD Footprint`): set to `Camera_Sub:<package>`.
 - PWR_FLAGs added on 3V3/GND, which enter from the main board through J1.
 - Four OrCAD-style labelled stub wires had a dangling end: trimmed to the label, topology unchanged.
+- The project sets the schematic drawing sheet to `empty.kicad_wks` (so only the OrCAD frame and title block are drawn), but the file was missing: KiCad fell back to its default sheet, drawn over the OrCAD title block, and KiBot stops when printing the schematic. Added the empty drawing sheet.
 
 PCB (Allegro import):
 - Footprints had no library ID, value or symbol link: generated the project footprint library `Camera_Sub.pretty` from the placed footprints and filled in the library IDs, values, symbol links and schematic fields.
