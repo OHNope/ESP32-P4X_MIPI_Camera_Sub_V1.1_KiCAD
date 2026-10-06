@@ -54,6 +54,7 @@ PCB（Allegro 导入）：
 - 约束为 KiCad 默认值：恢复 Allegro 约束（最小线宽 0.127 mm、最小钻孔 0.25 mm）。
 - 网络类按实际铜皮分配：`DP_CSI_A_*`（CSI 差分对，0.1778 mm）、`CS_0`（普通信号，0.127 mm）、`POWER`（3V3/AVDD_2V8/DOVDD_1V8/GND，0.635 mm，过孔 0.762/0.5）；预设线宽、过孔和差分对尺寸表填入板上实际使用的尺寸。
 - GND 铺铜：间距 0.1778 mm、焊盘实心连接，重新填充。
+- 封装的 courtyard 和 Fab 层只是焊盘外框：导入得到的 `Camera_Sub` 封装，F.CrtYd 基本就是焊盘的外接矩形（FFC_24P_0P5 的甚至比焊盘还小），SOT23-5 沿本体长边只有 2.4 mm，比 2.9 mm 的本体还短；F.Fab 要么没有，要么也只是焊盘框。这样 KiCad 的 courtyard 重叠检查对这些封装几乎不起作用：在基于本工程的衍生设计里，两颗 SOT-23-5 本体贴在一起 DRC 也没有报错，直到 JLCPCB 贴片审核才发现。已按器件本体重画：F.Fab 画本体外形（IC 和晶振带 1 脚倒角），F.CrtYd 取焊盘和本体各外扩 0.15 mm 的并集，连接器、SOT 和 SW1 用多边形贴合。外扩 0.15 mm 时，两个 courtyard 相接对应 0.3 mm 的本体/焊盘间距，高于 JLCPCB 要求的 0.2 mm；Espressif 原布局仍然没有 courtyard 重叠。本体尺寸：0402 1.0×0.5、0603 1.6×0.8、SOT-23-5 2.9×1.6（ME6211、TI DBV）、SOT-363 2.0×1.25、3225 晶振 3.2×2.5、SW1 4.2×3.4（Espressif BOM）；J1/J2 用 JLCPCB 的 EasyEDA 元件外形（C262721、C2856805），J1 的外形比板边多出约 1.5 mm，与 JLCPCB 贴片预览一致。
 
 ### 版权与许可
 
@@ -111,6 +112,7 @@ PCB (Allegro import):
 - Constraints were KiCad defaults: restored the Allegro values (0.127 mm minimum track, 0.25 mm minimum drill).
 - Netclasses assigned from the routed copper: `DP_CSI_A_*` (CSI differential pairs, 0.1778 mm), `CS_0` (ordinary signals, 0.127 mm), `POWER` (3V3/AVDD_2V8/DOVDD_1V8/GND, 0.635 mm, 0.762/0.5 vias). The pre-defined track, via and differential-pair size tables hold the sizes used on the board.
 - GND pour: 0.1778 mm clearance with solid pad connection, refilled.
+- Footprint courtyards and Fab outlines only traced the pads: in the imported `Camera_Sub` footprints, F.CrtYd was essentially the pads' bounding box (smaller than the pads on FFC_24P_0P5), so SOT23-5's courtyard was 2.4 mm along the body, shorter than its 2.9 mm body; F.Fab was missing or also just the pad box. KiCad's courtyard-overlap check therefore hardly worked for these footprints: in a design derived from this project, two SOT-23-5 bodies touched without any DRC error, and JLCPCB's assembly review caught it. Redrawn from the component bodies: F.Fab is the body outline (with a pin-1 chamfer on the ICs and the crystal), and F.CrtYd is the union of the pads and the body, each grown by 0.15 mm, drawn as a polygon on the connectors, the SOT packages and SW1. With 0.15 mm, touching courtyards mean 0.3 mm between bodies or pads, above JLCPCB's 0.2 mm minimum, and Espressif's own placement still has no courtyard overlap. Body sizes: 0402 1.0×0.5, 0603 1.6×0.8, SOT-23-5 2.9×1.6 (ME6211, TI DBV), SOT-363 2.0×1.25, 3225 crystal 3.2×2.5, SW1 4.2×3.4 (Espressif BOM); J1/J2 use JLCPCB's EasyEDA component outlines (C262721, C2856805). J1's outline reaches about 1.5 mm past the board edge, as in JLCPCB's assembly preview.
 
 ### Copyright and license
 

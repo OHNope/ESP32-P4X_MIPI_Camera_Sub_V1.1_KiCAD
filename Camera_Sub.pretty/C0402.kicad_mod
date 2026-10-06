@@ -151,26 +151,27 @@
 		(uuid "2d5a4733-f620-4faa-838c-a310fdaf70ad")
 	)
 	(fp_rect
-		(start -0.762 0.254)
-		(end 0.762 -0.254)
+		(start -0.92 -0.41)
+		(end 0.92 0.41)
 		(stroke
-			(width 0.1)
-			(type default)
+			(width 0.05)
+			(type solid)
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "620baf02-ee23-4caa-af2d-4704b22adfb9")
+		(uuid "2c6e0d3e-6697-4844-8699-d0effea64369")
 	)
-	(fp_rect
-		(start -0.762 0.254)
-		(end 0.762 -0.254)
+	(fp_poly
+		(pts
+			(xy -0.5 -0.25) (xy 0.5 -0.25) (xy 0.5 0.25) (xy -0.5 0.25)
+		)
 		(stroke
 			(width 0.1)
-			(type default)
+			(type solid)
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "15c0c865-c810-4377-8ef0-894fd4a45801")
+		(uuid "f81d425d-3cf6-4040-a311-3148345535b7")
 	)
 	(pad "1" smd rect
 		(at -0.508 0)

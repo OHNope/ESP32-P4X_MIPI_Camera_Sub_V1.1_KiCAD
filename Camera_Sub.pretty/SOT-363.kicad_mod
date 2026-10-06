@@ -122,15 +122,28 @@
 	)
 	(fp_poly
 		(pts
-			(xy -1.1999 1) (xy 1.1999 1) (xy 1.1999 -1) (xy -1.1999 -1)
+			(xy 0.78 -1) (xy 1.35 -1) (xy 1.35 1) (xy 0.78 1) (xy 0.78 1.15) (xy -0.78 1.15) (xy -0.78 1) (xy -1.35 1)
+			(xy -1.35 -1) (xy -0.78 -1) (xy -0.78 -1.15) (xy 0.78 -1.15)
 		)
 		(stroke
-			(width 0.1)
-			(type default)
+			(width 0.05)
+			(type solid)
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "b1a7d625-e9dc-44dd-81de-e55a194330c1")
+		(uuid "a6a0e20f-5167-4a51-89bf-7c6e42b4b268")
+	)
+	(fp_poly
+		(pts
+			(xy -0.325 -1) (xy 0.625 -1) (xy 0.625 1) (xy -0.625 1) (xy -0.625 -0.7)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "0ecf9a20-6c31-4195-b583-ebd4061d97dc")
 	)
 	(pad "1" smd rect
 		(at -0.85 -0.65 90)
